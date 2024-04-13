@@ -1,0 +1,13 @@
+#Inport Nessesary libraries
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from sklearn.datasets import load_iris
+print("Daniel MscIT 011")
+#Load the iris Dataset
+iris = load_iris()
+X,Y = iris.data,iris.target
+kmeans = KMeans(n_clusters=3,random_state=42)
+kmeans.fit(X)
+cluster_label = kmeans.labels_
+plt.scatter(X[:,0],X[:,1],c= cluster_label,cmap='viridis')
+plt.show()
