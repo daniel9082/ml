@@ -12,3 +12,21 @@ plt.scatter(data[:,0],data[:,1],c = cluster_labels)
 plt.xlabel('x-co-ordinate')
 plt.ylabel('y-co-ordinate')
 plt.title('KMean Clustering(k='+str(k)+')')
+___________________________________________________________________________________________
+
+import numpy as np
+import pandas as pd
+print("Daniel MscIT 011")
+data =
+pd.DataFrame({'income':[25000,50000,75000,100000,125000,150000,175000,200000],'spendin
+g':[15000,25000,35000,45000,55000,65000,75000,85000]})
+k = 3
+from sklearn.cluster import KMeans
+kmean = KMeans(n_clusters=3)
+kmean.fit(data)
+cluster_labels = kmean.predict(data)
+import matplotlib.pyplot as plt
+plt.scatter(data['income'],data['spending'],c = cluster_labels)
+plt.xlabel('x-co-ordinate')
+plt.ylabel('y-co-ordinate')
+plt.title('KMean Clustering(k='+str(k)+')')
