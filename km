@@ -1,0 +1,14 @@
+import numpy as np
+print("Daniel MscIT 011")
+#Sample data reperesenting flower location
+data = np.array([[1,2],[1.5,1.8],[5,8],[8,8],[1,0.5],[7,9],[9,10],[5.5,8.5]])
+k = 3
+from sklearn.cluster import KMeans
+kmean = KMeans(n_clusters=3)
+kmean.fit(data)
+cluster_labels = kmean.predict(data)
+import matplotlib.pyplot as plt
+plt.scatter(data[:,0],data[:,1],c = cluster_labels)
+plt.xlabel('x-co-ordinate')
+plt.ylabel('y-co-ordinate')
+plt.title('KMean Clustering(k='+str(k)+')')
